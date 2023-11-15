@@ -7,6 +7,9 @@ const Home = () => {
 
   const dispatch = useDispatch();
   const state = useSelector((state) => state.card);
+  let items = state.data
+  console.log(items);
+
 
   useEffect(() => {
     dispatch(fetchTodos())
@@ -15,8 +18,6 @@ const Home = () => {
   if (state.isLoading) {
     return <h1>Loading....</h1>;
   }
-  let items = state.data
-  console.log(items);
 
 
   return (
